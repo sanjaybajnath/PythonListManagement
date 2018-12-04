@@ -26,10 +26,20 @@ else:
 list_sum = 0
 for i in range(0,len(number_list)):
     list_sum += float(number_list[i])
-print("avg = ",(list_sum/len(number_list)))
+print("The average of the numbers in the list is ",(list_sum/len(number_list)))
 
+for i in range(0,len(number_list)):
+    number_list[i]=float(number_list[i])
+    if(number_list[i] %1 == 0):
+        number_list[i] = int(number_list[i])
+print("The list in order is:",sorted(number_list))
+median = 0
+if(len(number_list)%2==1):
+    median = number_list[int((len(number_list)-1)/2)]
+else:
+    median = number_list[int(len(number_list)/2)]
 
-    
+print("median =",median)
 
 
 
