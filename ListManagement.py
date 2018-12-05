@@ -6,6 +6,8 @@ check_num = input("What number are you looking for in this list?")
 user_input = user_input.replace(" ","")
 number_list =user_input.split(",")
 
+print("There are",len(number_list)," numberes in this list.")
+
 number_set = "{"
 for i in range(0,len(number_list)-1):
     number_set= number_set + number_list[i]+","
@@ -35,12 +37,10 @@ for i in range(0,len(number_list)):
 print("The list in order is:",sorted(number_list))
 median = 0
 if(len(number_list)%2==1):
-    median = number_list[int((len(number_list)-1)/2)]
+     median = number_list[int(len(number_list)/2)]
 else:
-    median = number_list[int(len(number_list)/2)]
+    median = (number_list[int((len(number_list)-1)/2)]+number_list[int((len(number_list))/2)])/2
 
-print("median =",median)
-
-
+print("The median of the numbers in the list is: ",median)
 
     
