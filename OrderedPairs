@@ -1,0 +1,23 @@
+# Ordered Pairs
+
+user_input = input("Enter a list of ordered pairs, separated by commas.")
+user_input = user_input.replace(" ","")
+user_input = user_input.replace("(","")
+user_input = user_input.replace(")","")
+
+number_list = user_input.split(",")
+print (number_list)
+
+x_coordinates = []
+y_coordinates = []
+for i in range (len(number_list)):
+    if(i%2 == 0):
+        x_coordinates.append(number_list[i])
+    else:
+        y_coordinates.append(number_list[i])
+        
+print(x_coordinates)
+print(y_coordinates)
+
+print("There are" , len(x_coordinates) , "ordered pairs.")
+
