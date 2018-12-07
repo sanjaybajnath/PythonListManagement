@@ -6,18 +6,40 @@ user_input = user_input.replace("(","")
 user_input = user_input.replace(")","")
 
 number_list = user_input.split(",")
-print (number_list)
+
 
 x_coordinates = []
 y_coordinates = []
 for i in range (len(number_list)):
     if(i%2 == 0):
-        x_coordinates.append(number_list[i])
+        x_coordinates.append(float(number_list[i]))
     else:
-        y_coordinates.append(number_list[i])
-        
-print(x_coordinates)
-print(y_coordinates)
+        y_coordinates.append(float(number_list[i]))
+
+
+#Check if the ordered pairs represent a function:
+function = True
+for i in range(0,len(x_coordinates)):
+    for j in range(0, len(x_coordinates)):
+        if (x_coordinates[i]==x_coordinates[j] and i!=j):
+            function = False
+if(function == False):
+    print("This is not a function.")
+else:
+    print("this is a function.")
+
 
 print("There are" , len(x_coordinates) , "ordered pairs.")
+
+points_string = "The ordered pairs are: "
+for i in range(0,len(x_coordinates)-1):
+    points_string = points_string +"("+str(x_coordinates[i])+","+str(y_coordinates[i])+"),"
+points_string= points_string +" and ("+str(x_coordinates[-1])+","+str(y_coordinates[-1])+")"
+print(points_string)
+
+if(function== True):      
+    a = float(input("Enter a value for a: "))
+    for i in range(0,len(x_coordinates)):
+        if(x_coordinates[i]==a):
+            print("f(",a,") =",y_coordinates[i])
 
