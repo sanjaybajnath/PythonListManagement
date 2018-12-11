@@ -1,0 +1,31 @@
+#Python Project - Nested Lists
+#Sanjay Bajnath
+
+# Open the file (must be in same directory as script)
+text_file = open('list_of_numbers_1.txt','r')
+
+# Make a string list from the lines of the text file 
+file_data = text_file.readlines()
+
+# Close the file (Always close the file!)
+text_file.close()
+
+# Create a copy of the file_data to work on 
+numbers = file_data
+
+# Create a list of floats from the list of strings
+for i in range(0,len(numbers)):
+    numbers[i] = float(numbers[i])
+print(numbers)
+
+coordinates = [[]for i in range(2)]
+for i in range(0,len(numbers)):
+    if(i%2 == 0):
+        coordinates[0].append(numbers[i])
+
+for i in range(0,len(numbers)):
+    if(i%2 == 1):
+        coordinates[1].append(numbers[i])
+
+print("X:",coordinates[0])
+print("Y:",coordinates[1])
